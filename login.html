@@ -1,0 +1,69 @@
+<html>
+<head>
+<style>
+input
+{
+width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+   float : center;
+}
+input[type=submit]
+{
+width: 8%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    color: white;
+   float : center;
+}
+input[type=reset]
+{
+width: 8%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    color: white;
+   float : center;
+}
+</style>
+   </head>
+	<body>
+<center>
+ <form method="post" name="myform" onsubmit="return validatef()" action="bookbus.html">
+         User ID : <input type = "text" name = "userid"  minlength=6 >
+         <br><br>
+         Password: <input type = "password" name = "password" minlength=6 >
+         <br><br>
+         <input type = "submit" name = "submit"> &nbsp&nbsp
+         <input type = "reset" name = "reset">
+      </form>
+</center>
+<script>
+function validatef()
+{
+var x = document.forms["myform"]["userid"].value;
+var z = document.forms["myform"]["password"].value;
+var c= /[a-z]/;
+var h= /[a-z A-Z 0-9 @#!$%^&*]/;
+    if (!x.match(c)) {
+        alert("Name is not correct");
+        return false;
+    }
+if (!z.match(h)) {
+        alert("password is not correct");
+        return false;
+    }
+return true;
+}
+</script>
+	</body>
+</html>

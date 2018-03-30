@@ -1,0 +1,77 @@
+<?php include('register.php'); ?>
+<html>
+<head>
+<style>
+
+input
+{
+width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+   float : center;
+}
+input[type=submit]
+{
+width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    color: white;
+   float : center;
+}
+</style>
+</head>
+<body >
+<center><h1><b>REGISTRATION PAGE</b></h1>
+<form method="post" action="register.php"  name="myform">
+  <b>Username:</b>
+  <input type="text" name="fname" minlength=6 >
+  <br>
+ <b> Password:</b>
+  <input type="password" name="pass" minlength=6 >
+  <br>
+<b>Email-id:</b>&nbsp
+ <input type="text" name="email" >
+  <br>
+ <b>Phone no:</b>
+ <input type="text" name="phone" maxlength="10" >
+  <br><br>
+<input type="submit" value="Submit">
+ </center>
+<script>
+function validatef()
+{
+var x = document.forms["myform"]["fname"].value;
+var d = document.forms["myform"]["email"].value;
+var z = document.forms["myform"]["pass"].value;
+var y = document.forms["myform"]["phone"].value;
+var c= /[a-z]/;
+var h= /[a-z A-Z 0-9 @ # $ % ^ & * ]/;
+ i=new RegExp("^[1-9][0-9]+$","g");
+    if (!x.match(c)) {
+        alert("Name is not correct");
+        return false;
+    }
+if (!z.match(h)) {
+        alert("password is not correct");
+        return false;
+    }
+if (!d.match(/@/)) {
+        alert("email is not correct");
+        return false;
+    }
+if (!y.match(i)) {
+        alert("phoneno is not correct");
+        return false;
+    }
+return true;
+}
+</script>
+</body> 
+</html>
