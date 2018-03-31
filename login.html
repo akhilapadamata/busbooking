@@ -1,3 +1,4 @@
+<?php include('logins.php'); ?>
 <html>
 <head>
 <style>
@@ -38,8 +39,8 @@ width: 8%;
    </head>
 	<body>
 <center>
- <form method="post" name="myform" onsubmit="return validatef()" action="bookbus.html">
-         User ID : <input type = "text" name = "userid"  minlength=6 >
+ <form method="post" name="myform" onsubmit="return validatef()" action="logins.php">
+         User ID : <input type = "text" name = "username"  minlength=6 >
          <br><br>
          Password: <input type = "password" name = "password" minlength=6 >
          <br><br>
@@ -50,7 +51,7 @@ width: 8%;
 <script>
 function validatef()
 {
-var x = document.forms["myform"]["userid"].value;
+var x = document.forms["myform"]["username"].value;
 var z = document.forms["myform"]["password"].value;
 var c= /[a-z]/;
 var h= /[a-z A-Z 0-9 @#!$%^&*]/;
