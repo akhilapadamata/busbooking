@@ -1,4 +1,8 @@
 <html>
+    <head>
+        <title>Pagecontent</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.css">
+    </head>
 <style>
 .container
 {
@@ -32,8 +36,15 @@ overflow-x :hidden;
 <img src="https://c1.staticflickr.com/6/5582/15078972379_07244e203a_b.jpg"  width=1400px height=400px>
 <div class="forma">
 <form>
-to:<input type="text" name="to">
-   from:<input type="text" name="from">
+to:<input class="awesomecomplete" type="text" id="to">
+<script type="text/javascript" src="https://rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.js"></script>
+<script type="text/javascript">
+    var input = document.getElementById("to");
+    var awesomplete = new Awesomplete(input ,{
+    awesomplete.list = ["Hyderabad", "Mumbai", "Bengaluru", "Kolkata", "Goa", "Delhi"]
+    });
+</script>
+from:<input type="text" name="from">
 date:<input type="date" name="date">
 time:<input type="time" name="time">
    </form>
