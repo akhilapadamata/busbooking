@@ -1,24 +1,130 @@
 <html>
 <head>
 <style>
-.button
-{
-background-color: #4CAF50;
-    border: none;
+.dropbtn {
+    background-color: black;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 8px;
     font-size: 16px;
-    margin: 4px 2px;
+    border: none;
     cursor: pointer;
-float : center;
+	
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: DarkCyan;
+}
+input[type=submit]
+{
+width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: DarkCyan;
+    color: white;
+   float : center;
+   cursor:pointer;
+}
+input[type=text]
+{
+width: 15%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color:black;
+    color: white;
+   float : center;
+}
+input[type=date]
+{
+width: 15%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    color: white;
+   float : center;
 }
 </style>
 </head>
 <body>
-<button class="button" >Tourism</button>&nbsp&nbsp
-<button class="button">Regularr</button>
+<center>
+
+<div class="dropdown">
+<b>CITY:</b><br>
+<select class="dropbtn">
+<option value="Bangalore">Bangalore</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Goa">Goa</option>
+<option value="Kolkata">Kolkata</option>
+<option value="Delhi">Delhi</option>
+</select>
+</div>
+<br><br>
+<form method="post" name="myForm" action="content.html">
+<b>DATE:</b><br>
+<input type="date" id="myDate" value="dd-mm-yyyy">
+<br><br>
+<b>START PLACE:</b><br>
+<input type="text" name="pick"><br><br>
+<b>PACKAGE NUMBER:</b><br>(click on city images on home page)<br>
+<input type="text" name="packno"><br><br>
+<div class="dropdown">
+<b>SEATS:</b><br><br>
+<select class="dropbtn">
+<option value="seats">07</option>
+<option value="seats">10</option>
+<option value="seats">15</option>
+<option value="seats">20+</option>
+</select>
+</div>
+<br><br>
+<b>GUIDE:</b><br><br>
+<input type="radio" checked="checked" name="guide">YES
+<input type="radio" name="guide">NO
+<br>
+<br><br>
+<input type="submit" value="OK">
+</form>
+</center>
+<script>
+function myFunction() {
+    var x = document.getElementById("myDate").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
 </body>
 </html>
